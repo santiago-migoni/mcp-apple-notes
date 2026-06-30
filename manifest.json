@@ -1,0 +1,49 @@
+// Copyright 2026 santiago_migoni
+//
+// Licensed under the GNU Affero General Public License v3.0 (the "License");
+// you may not use this file except in compliance with the License.
+// See the LICENSE file in the repository root for the full license text,
+// or https://www.gnu.org/licenses/agpl-3.0.html
+
+{
+  "manifest_version": "0.2",
+  "name": "mcp-apple-notes",
+  "display_name": "Apple Notes",
+  "version": "0.1.0",
+  "description": "List, read, create, update, delete, and search notes in Notes.app on macOS.",
+  "author": {
+    "name": "Santiago Migoni"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/santiago-migoni/mcp-apple-notes"
+  },
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "dist/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/dist/index.js"
+      ],
+      "env": {}
+    }
+  },
+  "tools": [
+    { "name": "list_notes", "description": "List notes (id, title, modification date), without body." },
+    { "name": "read_note", "description": "Read a note's full content (Markdown) by id." },
+    { "name": "create_note", "description": "Create a note from Markdown content; the first line becomes the title." },
+    { "name": "update_note", "description": "Replace a note's entire content by id." },
+    { "name": "delete_note", "description": "Delete a note by id (moves it to Recently Deleted)." },
+    { "name": "search_notes", "description": "Case-insensitive substring search over title and content." }
+  ],
+  "keywords": ["mcp", "notes", "macos", "jxa", "applescript"],
+  "license": "AGPL-3.0",
+  "compatibility": {
+    "platforms": ["darwin"],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  }
+}

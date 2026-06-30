@@ -1,0 +1,8 @@
+node_modules/
+dist/
+
+# Apple's official Notes.app icon (copyrighted asset) and the packaged extension that
+# embeds it — local-only, not redistributed via the public repo. Regenerate icon.png
+# with: sips -s format png /System/Applications/Notes.app/Contents/Resources/AppIcon.icns --out icon.png
+icon.png
+*.mcpb
